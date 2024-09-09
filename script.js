@@ -62,6 +62,8 @@ function pickOption(params) {
   start.setBotOption = start.botBrain();
   start.winCalculation();
 
+  const backsound = document.getElementById("backsound");
+  backsound.play();
   const inGame = document.getElementById("inGame");
   const result = document.getElementById("result");
 
@@ -92,20 +94,19 @@ function pickOption(params) {
 // Start backsound when the page loads
 window.onload = function () {
   const backsound = document.getElementById("backsound");
-  backsound.play();
+  const winSound = document.getElementById("winSound");
+  const loseSound = document.getElementById("loseSound");
+  const drawSound = document.getElementById("drawSound");
+
+  // Set semua audio menjadi mute
+  backsound.muted = true;
+  winSound.muted = true;
+  loseSound.muted = true;
+  drawSound.muted = true;
 };
 
 backsound.volume = 0.5; // Mengatur volume backsound ke 50%
 winSound.volume = 0.7; // Mengatur volume SFX menang ke 70%
-
-function toggleBacksound() {
-  const backsound = document.getElementById("backsound");
-  if (backsound.paused) {
-    backsound.play();
-  } else {
-    backsound.pause();
-  }
-}
 
 function toggleSound() {
   const soundButton = document.getElementById("soundButton");
@@ -116,16 +117,16 @@ function toggleSound() {
   const drawSound = document.getElementById("drawSound");
 
   if (backsound.muted) {
-    // Unmute
+    // Unmute semua suara
     backsound.muted = false;
     winSound.muted = false;
     loseSound.muted = false;
     drawSound.muted = false;
-
+    backsound.play();
     soundButton.style.display = "inline";
     muteButton.style.display = "none";
   } else {
-    // Mute
+    // Mute semua suara
     backsound.muted = true;
     winSound.muted = true;
     loseSound.muted = true;
