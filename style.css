@@ -1,0 +1,119 @@
+:root {
+  box-sizing: border-box;
+}
+
+html,
+body,
+* {
+  margin: 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+#app {
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.summary {
+  position: relative; /* Agar elemen anak bisa diposisikan relatif */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 3px solid blanchedalmond;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+}
+
+button {
+  position: absolute;
+  top: 0;  /* Atur jarak dari atas */
+  right: 10px; /* Atur jarak dari kanan */
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #666;
+  transition: color 0.2s;
+}
+
+
+.games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.option {
+  width: auto;
+  margin: 10px 15px;
+  /* padding: 20px; */
+  text-align: center;
+  font-size: 40px;
+  background-color: bisque;
+  border: none;
+  border-radius: 10px;
+}
+
+.option:hover {
+  cursor: pointer;
+  background-color: burlywood;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+  transform: scale(105%);
+  -webkit-transform: scale(105%);
+  -moz-transform: scale(105%);
+  -ms-transform: scale(105%);
+  -o-transform: scale(105%);
+  -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+  -moz-transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+  -ms-transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+  -o-transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .summary {
+    width: 350px;
+    height: 350px;
+  }
+
+  #app {
+    padding: 10px;
+  }
+
+  .summary h1,
+  .summary h3 {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .summary h1#inGame {
+    font-size: 24px;
+  }
+
+  .summary h3#result {
+    font-size: 20px;
+  }
+}
